@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TBLPIDE_CONSULTA">
+    <Key>
+      <PropertyRef Name="CCONS_CONSULTA_ID" />
+    </Key>
+    <Property Name="CCONS_CONSULTA_ID" Type="Byte" Nullable="false" />
+    <Property Name="SCONS_NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SCONS_DETALLE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TBLPIDE_CONSULTA_LOG" Relationship="Self.TBLPIDE_CONSULTA_FK" FromRole="TBLPIDE_CONSULTA" ToRole="TBLPIDE_CONSULTA_LOG" />
+  </EntityType>
+  <EntityType Name="TBLPIDE_CONSULTA_LOG">
+    <Key>
+      <PropertyRef Name="CCONSLOG_CONSULTA_LOG_ID" />
+    </Key>
+    <Property Name="CCONSLOG_CONSULTA_LOG_ID" Type="Int32" Nullable="false" />
+    <Property Name="SCONSLOG_USUARIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DCONSLOG_FECHA_HORA" Type="DateTime" Nullable="false" />
+    <Property Name="SCONSLOG_PARAMETROS_REQUEST" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CCCONSLOG_ERROR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="SCONSLOG_COMENTARIO_ERROR" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="CCONS_CONSULTA_ID" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="TBLPIDE_CONSULTA" Relationship="Self.TBLPIDE_CONSULTA_FK" FromRole="TBLPIDE_CONSULTA_LOG" ToRole="TBLPIDE_CONSULTA" />
+  </EntityType>
+  <EntityType Name="TBLPIDE_TOKEN">
+    <Key>
+      <PropertyRef Name="CTOK_TOKEN_ID" />
+    </Key>
+    <Property Name="CTOK_TOKEN_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+    <Property Name="STOK_USUARIO_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="STOK_AUTH_TOKEN" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DTOK_FECHA_EXPIRACION" Type="DateTime" />
+    <Property Name="DTOK_FECHA_CREACION" Type="DateTime" />
+  </EntityType>
+  <Association Name="TBLPIDE_CONSULTA_FK">
+    <End Role="TBLPIDE_CONSULTA" Type="Self.TBLPIDE_CONSULTA" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="TBLPIDE_CONSULTA_LOG" Type="Self.TBLPIDE_CONSULTA_LOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLPIDE_CONSULTA">
+        <PropertyRef Name="CCONS_CONSULTA_ID" />
+      </Principal>
+      <Dependent Role="TBLPIDE_CONSULTA_LOG">
+        <PropertyRef Name="CCONS_CONSULTA_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PideDatabase" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TBLPIDE_CONSULTA" EntityType="Self.TBLPIDE_CONSULTA" />
+    <EntitySet Name="TBLPIDE_CONSULTA_LOG" EntityType="Self.TBLPIDE_CONSULTA_LOG" />
+    <EntitySet Name="TBLPIDE_TOKEN" EntityType="Self.TBLPIDE_TOKEN" />
+    <AssociationSet Name="TBLPIDE_CONSULTA_FK" Association="Self.TBLPIDE_CONSULTA_FK">
+      <End Role="TBLPIDE_CONSULTA" EntitySet="TBLPIDE_CONSULTA" />
+      <End Role="TBLPIDE_CONSULTA_LOG" EntitySet="TBLPIDE_CONSULTA_LOG" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

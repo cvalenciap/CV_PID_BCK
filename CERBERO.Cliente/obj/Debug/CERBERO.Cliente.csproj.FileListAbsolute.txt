@@ -1,0 +1,14 @@
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\bin\Debug\CERBERO.Cliente.dll
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\bin\Debug\CERBERO.Cliente.pdb
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\bin\Debug\Newtonsoft.Json.dll
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\bin\Debug\Newtonsoft.Json.xml
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\obj\Debug\CERBERO.Cliente.dll
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\obj\Debug\CERBERO.Cliente.pdb
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\obj\Debug\CERBERO.Cliente.csprojResolveAssemblyReference.cache
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\bin\Debug\CERBERO.Cliente.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\bin\Debug\CERBERO.Cliente.pdb
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\bin\Debug\Newtonsoft.Json.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\bin\Debug\Newtonsoft.Json.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\obj\Debug\CERBERO.Cliente.csprojResolveAssemblyReference.cache
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\obj\Debug\CERBERO.Cliente.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\obj\Debug\CERBERO.Cliente.pdb

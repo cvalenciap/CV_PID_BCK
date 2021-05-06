@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="PideDatabase">
+    <EntitySetMapping Name="TBLPIDE_CONSULTA">
+      <EntityTypeMapping TypeName="Model.TBLPIDE_CONSULTA">
+        <MappingFragment StoreEntitySet="TBLPIDE_CONSULTA">
+          <ScalarProperty Name="CCONS_CONSULTA_ID" ColumnName="CCONS_CONSULTA_ID" />
+          <ScalarProperty Name="SCONS_NOMBRE" ColumnName="SCONS_NOMBRE" />
+          <ScalarProperty Name="SCONS_DETALLE" ColumnName="SCONS_DETALLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPIDE_CONSULTA_LOG">
+      <EntityTypeMapping TypeName="Model.TBLPIDE_CONSULTA_LOG">
+        <MappingFragment StoreEntitySet="TBLPIDE_CONSULTA_LOG">
+          <ScalarProperty Name="CCONSLOG_CONSULTA_LOG_ID" ColumnName="CCONSLOG_CONSULTA_LOG_ID" />
+          <ScalarProperty Name="SCONSLOG_USUARIO" ColumnName="SCONSLOG_USUARIO" />
+          <ScalarProperty Name="DCONSLOG_FECHA_HORA" ColumnName="DCONSLOG_FECHA_HORA" />
+          <ScalarProperty Name="SCONSLOG_PARAMETROS_REQUEST" ColumnName="SCONSLOG_PARAMETROS_REQUEST" />
+          <ScalarProperty Name="CCCONSLOG_ERROR" ColumnName="CCCONSLOG_ERROR" />
+          <ScalarProperty Name="SCONSLOG_COMENTARIO_ERROR" ColumnName="SCONSLOG_COMENTARIO_ERROR" />
+          <ScalarProperty Name="CCONS_CONSULTA_ID" ColumnName="CCONS_CONSULTA_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBLPIDE_TOKEN">
+      <EntityTypeMapping TypeName="Model.TBLPIDE_TOKEN">
+        <MappingFragment StoreEntitySet="TBLPIDE_TOKEN">
+          <ScalarProperty Name="CTOK_TOKEN_ID" ColumnName="CTOK_TOKEN_ID" />
+          <ScalarProperty Name="STOK_USUARIO_ID" ColumnName="STOK_USUARIO_ID" />
+          <ScalarProperty Name="STOK_AUTH_TOKEN" ColumnName="STOK_AUTH_TOKEN" />
+          <ScalarProperty Name="DTOK_FECHA_EXPIRACION" ColumnName="DTOK_FECHA_EXPIRACION" />
+          <ScalarProperty Name="DTOK_FECHA_CREACION" ColumnName="DTOK_FECHA_CREACION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

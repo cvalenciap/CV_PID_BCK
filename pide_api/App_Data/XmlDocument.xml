@@ -1,0 +1,1697 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>pide_api</name>
+    </assembly>
+    <members>
+        <member name="M:pide_api.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,pide_api.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:pide_api.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:pide_api.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:pide_api.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:pide_api.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:pide_api.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:pide_api.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:pide_api.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:pide_api.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:pide_api.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,pide_api.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,pide_api.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:pide_api.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:pide_api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(pide_api.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:pide_api.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:pide_api.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},pide_api.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:pide_api.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:pide_api.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleKey.#ctor(pide_api.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:pide_api.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:pide_api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:pide_api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,pide_api.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:pide_api.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:pide_api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:pide_api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:pide_api.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:pide_api.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:pide_api.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:pide_api.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:pide_api.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:pide_api.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="P:pide_api.Models.Usuario.username">
+            <summary>
+            Nombre de usuario
+            </summary>
+        </member>
+        <member name="P:pide_api.Models.Usuario.authToken">
+            <summary>
+            Token de usuario autentificado
+            </summary>
+        </member>
+        <member name="P:pide_api.Models.Usuario.opciones">
+            <summary>
+            Opciones disponibles de usuario
+            </summary>
+        </member>
+        <member name="M:pide_api.Controllers.AccountController.Login(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Autentificacion del usuario por Medio de Cerbero
+            </summary>
+            <returns> Un objeto Usuario</returns> 
+        </member>
+        <member name="M:pide_api.Controllers.AuditoriaController.ListarConsultas">
+            <summary>
+            Cargar Lista de Consultas disponibles
+            </summary>
+            <returns>Lista de Objeto Consulta</returns> 
+        </member>
+        <member name="M:pide_api.Controllers.AuditoriaController.RegistroConsultas(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Obtener registro de consultas en un periodo de tiempo
+            </summary>
+            <returns>Lista de consultas regisradas en el log</returns> 
+        </member>
+        <member name="M:pide_api.Controllers.AuditoriaController.ResumenConsultas(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Obtener cuantas consultas se han dado un mes determinando
+            </summary>
+            <returns>Cantidad de consultas realizadas para cada tipo</returns> 
+        </member>
+        <member name="M:pide_api.Controllers.ConsultasController.GetByDni(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Obtener informacion de una persona natural por medio de su DNI
+            </summary>
+            <returns>Objecto de Resultado para Consulta DNI</returns> 
+        </member>
+        <member name="M:pide_api.Controllers.ConsultasController.GetByRuc(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Obtener informacion de un persona juridica por medio de su RUC
+            </summary>
+            <returns>Objeto de Resultado para Consulta RUC</returns> 
+        </member>
+        <member name="M:pide_api.Controllers.ConsultasController.GeTitularidad(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Obtener lista de titulos de propiedas para una persona natural o juricia
+            </summary>
+            <returns>Lista de titulos de propieda</returns> 
+        </member>
+        <member name="M:pide_api.Controllers.ConsultasController.GetAsientosTitularidad(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Obtener Lista de Asientos para una titularidad determinada
+            </summary>
+            <returns>Lista de Asientos</returns> 
+        </member>
+        <member name="M:pide_api.Controllers.ConsultasController.GetVigencia(Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Obtener data de imagen de vigencia para un asiento determinado
+            </summary>
+            <returns>Data de Imagen de Vigencia</returns> 
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.PideService_vs0">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws1.PideService_vs0.buscarTitularidadCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws1.PideService_vs0.generarVigenciaCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws1.PideService_vs0.listarAsientosCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws1.PideService_vs0.verAsientoCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws1.PideService_vs0.verDetalleRPVCompleted">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.buscarTitularidad(System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.buscarTitularidadAsync(System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.buscarTitularidadAsync(System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.generarVigencia(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.generarVigenciaAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.generarVigenciaAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.listarAsientos(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.listarAsientosAsync(System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.listarAsientosAsync(System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.verAsiento(System.Int64,System.Int64,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.verAsientoAsync(System.Int64,System.Int64,System.String,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.verAsientoAsync(System.Int64,System.Int64,System.String,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.verDetalleRPV(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.verDetalleRPVAsync(System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.verDetalleRPVAsync(System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws1.PideService_vs0.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.registro">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.apPaterno">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.apMaterno">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.nombre">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.razonSocial">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.tipoDocumento">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.numeroDocumento">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.numeroPartida">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.numeroPlaca">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.estado">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.zona">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.oficina">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.mensaje">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaTitularidadBean.direccion">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.placa">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.serie">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.vin">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.nro_motor">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.color">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.marca">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.modelo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.estado">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.sede">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaVehiculoBean.propietarios">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.tomoFolioBean">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.tomoFolioBean.idImgFolio">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.tomoFolioBean.idImgFolioSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.tomoFolioBean.nroPagRef">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.tomoFolioBean.pagina">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.tomoFolioBean.tipo">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.fichaBean">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.fichaBean.idImgFicha">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.fichaBean.idImgFichaSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.fichaBean.numPag">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.fichaBean.numPagSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.fichaBean.tipo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.fichaBean.listPag">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.numeroPaginasBean">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.numeroPaginasBean.nroPagRef">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.numeroPaginasBean.pagina">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.asientosBean">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.asientosBean.idImgAsiento">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.asientosBean.idImgAsientoSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.asientosBean.numPag">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.asientosBean.numPagSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.asientosBean.tipo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.asientosBean.listPag">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.respuestaPartidaBean">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaPartidaBean.transaccion">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaPartidaBean.nroTotalPag">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaPartidaBean.listAsientos">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaPartidaBean.listFichas">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaPartidaBean.listFolios">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.respuestaSolicitudBean">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaSolicitudBean.estado">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaSolicitudBean.solicitud">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.respuestaSolicitudBean.fecha">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.buscarTitularidadCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.buscarTitularidadCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.buscarTitularidadCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.generarVigenciaCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.generarVigenciaCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.generarVigenciaCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.listarAsientosCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.listarAsientosCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.listarAsientosCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.verAsientoCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.verAsientoCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.verAsientoCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.verDetalleRPVCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws1.verDetalleRPVCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws1.verDetalleRPVCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws3.WSAuthenticationService">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws3.WSAuthenticationService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws3.WSAuthenticationService.getTicketCompleted">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws3.WSAuthenticationService.getTicket(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws3.WSAuthenticationService.getTicketAsync(System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws3.WSAuthenticationService.getTicketAsync(System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws3.WSAuthenticationService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws3.getTicketCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws3.getTicketCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws3.getTicketCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws2.WSDataVerificationService">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws2.WSDataVerificationService.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws2.WSDataVerificationService.getDatavalidateCompleted">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws2.WSDataVerificationService.getDatavalidate(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws2.WSDataVerificationService.getDatavalidateAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws2.WSDataVerificationService.getDatavalidateAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws2.WSDataVerificationService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws2.getDatavalidateCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws2.getDatavalidateCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws2.getDatavalidateCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.#ctor">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosPrincipalesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosSecundariosCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosT1144Completed">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getRepLegalesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getEstablecimientosAnexosCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDomicilioLegalCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getEstAnexosT1150Completed">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.buscaRazonSocialCompleted">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosT362Completed">
+            <remarks/>
+        </member>
+        <member name="E:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.setServicioConsultaRucServiceCompleted">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosPrincipales(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosPrincipalesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosPrincipalesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosSecundarios(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosSecundariosAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosSecundariosAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosT1144(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosT1144Async(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosT1144Async(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getRepLegales(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getRepLegalesAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getRepLegalesAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getEstablecimientosAnexos(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getEstablecimientosAnexosAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getEstablecimientosAnexosAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDomicilioLegal(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDomicilioLegalAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDomicilioLegalAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getEstAnexosT1150(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getEstAnexosT1150Async(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getEstAnexosT1150Async(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.buscaRazonSocial(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.buscaRazonSocialAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.buscaRazonSocialAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosT362(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosT362Async(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.getDatosT362Async(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.setServicioConsultaRucService(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.setServicioConsultaRucServiceAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.setServicioConsultaRucServiceAsync(System.Object,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:pide_api.pe.gob.pide.ws.ConsultaRucSoapBindingImplService_vs0.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.BeanDdp">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.cod_dep">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.cod_dist">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.cod_prov">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_ciiu">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_doble">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_estado">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_fecact">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_fecalt">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_fecbaj">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_flag22">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_identi">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_inter1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_lllttt">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_mclase">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_nombre">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_nomvia">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_nomzon">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_numer1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_numreg">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_numruc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_reacti">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_refer1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_secuen">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_tamano">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_tipvia">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_tipzon">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_tpoemp">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_ubigeo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.ddp_userna">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_ciiu">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_dep">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_dist">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_estado">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_flag22">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_identi">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_numreg">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_prov">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_tamano">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_tipvia">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_tipzon">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.desc_tpoemp">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.esActivo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDdp.esHabido">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.BeanT362">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT362.desc_numreg">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT362.t362_fecact">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT362.t362_fecbaj">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT362.t362_indice">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT362.t362_nombre">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT362.t362_numreg">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT362.t362_numruc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT362.t362_userna">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.BeanT1150">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1150.cod_userna">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1150.fec_act">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1150.ind_conleg">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1150.num_correl">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1150.num_depar">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1150.num_kilom">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1150.num_lote">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1150.num_manza">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1150.num_ruc">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.BeanSpr">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.cod_dep">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.cod_dist">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.cod_prov">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.desc_dep">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.desc_dist">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.desc_prov">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.desc_tipest">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.desc_tipvia">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.desc_tipzon">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.direccion">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_correl">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_fecact">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_inter1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_licenc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_nombre">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_nomvia">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_nomzon">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_numer1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_numruc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_refer1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_tipest">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_tipvia">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_tipzon">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_ubigeo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanSpr.spr_userna">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.BeanRso">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.cod_cargo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.cod_depar">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.desc_docide">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.num_ord_suce">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.rso_cargoo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.rso_docide">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.rso_fecact">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.rso_fecnac">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.rso_nombre">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.rso_nrodoc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.rso_numruc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.rso_userna">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanRso.rso_vdesde">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.BeanT1144">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_ciiu2">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_ciiu3">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_correo1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_correo2">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_depar1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_depar2">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_depar3">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_depar4">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_depar5">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_paicap">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_paiori">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.cod_userna">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_asiento">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_ciiu2">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_ciiu3">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_conleg">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_depar1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_depar2">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_depar3">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_depar4">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_depar5">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_parreg">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_proind">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.des_refnot">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.fec_act">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.fec_confir1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.fec_confir2">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.ind_conleg">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.ind_correo1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.ind_correo2">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.ind_notifi">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.ind_proind">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_depar">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_fax">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_kilom">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_lote">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_manza">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_ruc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_telef1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_telef2">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_telef3">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanT1144.num_telef4">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.BeanDds">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_aparta">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_asient">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_califi">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_centro">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_cierre">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_comext">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_consti">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_contab">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_docide">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_domici">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_ejempl">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_factur">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_fecact">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_fecnac">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_fecven">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_ficha">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_inicio">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_licenc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_motbaj">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_motemi">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_nacion">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_nfolio">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_nomcom">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_nrodoc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_numfax">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_numruc">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_orient">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_paispa">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_pasapo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_patron">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_sexo">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_telef1">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_telef2">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_telef3">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.dds_userna">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.declara">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_cierre">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_comext">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_contab">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_docide">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_domici">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_factur">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_motbaj">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_nacion">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_orient">
+            <comentarios/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.BeanDds.desc_sexo">
+            <comentarios/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDatosPrincipalesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDatosPrincipalesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.getDatosPrincipalesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDatosSecundariosCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDatosSecundariosCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.getDatosSecundariosCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDatosT1144CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDatosT1144CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.getDatosT1144CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getRepLegalesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getRepLegalesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.getRepLegalesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getEstablecimientosAnexosCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getEstablecimientosAnexosCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.getEstablecimientosAnexosCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDomicilioLegalCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDomicilioLegalCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.getDomicilioLegalCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getEstAnexosT1150CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getEstAnexosT1150CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.getEstAnexosT1150CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.buscaRazonSocialCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.buscaRazonSocialCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.buscaRazonSocialCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDatosT362CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.getDatosT362CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:pide_api.pe.gob.pide.ws.getDatosT362CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:pide_api.pe.gob.pide.ws.setServicioConsultaRucServiceCompletedEventHandler">
+            <remarks/>
+        </member>
+    </members>
+</doc>

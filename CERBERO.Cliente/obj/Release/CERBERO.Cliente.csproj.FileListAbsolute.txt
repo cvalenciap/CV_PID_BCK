@@ -1,0 +1,12 @@
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\bin\Release\CERBERO.Cliente.dll
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\bin\Release\CERBERO.Cliente.pdb
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\bin\Release\Newtonsoft.Json.dll
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\bin\Release\Newtonsoft.Json.xml
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\obj\Release\CERBERO.Cliente.dll
+C:\GMD\PIDEREST_Fuentes\CERBERO.Cliente\obj\Release\CERBERO.Cliente.pdb
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\bin\Release\CERBERO.Cliente.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\bin\Release\CERBERO.Cliente.pdb
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\bin\Release\Newtonsoft.Json.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\bin\Release\Newtonsoft.Json.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\obj\Release\CERBERO.Cliente.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\CERBERO.Cliente\obj\Release\CERBERO.Cliente.pdb

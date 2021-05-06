@@ -1,0 +1,134 @@
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\ApplicationInsights.config
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\pide_api.dll.config
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\pide_api.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\pide_api.XmlSerializers.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\pide_api.pdb
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Antlr3.Runtime.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\CERBERO.Cliente.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\EntityFramework.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\EntityFramework.SqlServer.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.Agent.Intercept.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.DependencyCollector.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.Web.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.WindowsServer.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.ApplicationInsights.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.Web.Infrastructure.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Newtonsoft.Json.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Oracle.ManagedDataAccess.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Net.Http.Formatting.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Helpers.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Http.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Http.WebHost.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Mvc.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Optimization.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Razor.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.WebPages.Deployment.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.WebPages.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.WebPages.Razor.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\WebGrease.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\CERBERO.Cliente.pdb
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Antlr3.Runtime.pdb
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\EntityFramework.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\EntityFramework.SqlServer.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.DependencyCollector.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.Web.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.AI.WindowsServer.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.ApplicationInsights.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\Newtonsoft.Json.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Net.Http.Formatting.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Helpers.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Http.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Http.WebHost.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Mvc.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Optimization.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.Razor.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.WebPages.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.WebPages.Deployment.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\System.Web.WebPages.Razor.xml
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Net.Http.Formatting.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Web.Helpers.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Web.Http.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Web.Http.WebHost.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Web.Mvc.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Web.Optimization.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Web.Razor.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Web.WebPages.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Web.WebPages.Deployment.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\bin\es\System.Web.WebPages.Razor.resources.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\obj\Release\pide_api.csprojResolveAssemblyReference.cache
+C:\GMD\PIDEREST_Fuentes\pide_api\obj\Release\pide_api.dll
+C:\GMD\PIDEREST_Fuentes\pide_api\obj\Release\pide_api.pdb
+C:\GMD\PIDEREST_Fuentes\pide_api\obj\Release\pide_api.XmlSerializers.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\obj\Release\pide_api.csprojResolveAssemblyReference.cache
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\obj\Release\pide_api.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\obj\Release\pide_api.pdb
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\obj\Release\pide_api.XmlSerializers.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\ApplicationInsights.config
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\pide_api.dll.config
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\pide_api.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\pide_api.XmlSerializers.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\pide_api.pdb
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Antlr3.Runtime.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\CERBERO.Cliente.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\EntityFramework.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\EntityFramework.SqlServer.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.DependencyCollector.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.Web.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.WindowsServer.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.ApplicationInsights.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.Diagnostics.Tracing.EventSource.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.Web.Infrastructure.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Newtonsoft.Json.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Oracle.ManagedDataAccess.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Oracle.ManagedDataAccess.EntityFramework.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Net.Http.Formatting.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Helpers.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Http.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Http.WebHost.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Mvc.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Optimization.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Razor.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.WebPages.Deployment.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.WebPages.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.WebPages.Razor.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\WebGrease.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\CERBERO.Cliente.pdb
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Antlr3.Runtime.pdb
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\EntityFramework.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\EntityFramework.SqlServer.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.DependencyCollector.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.Web.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.AI.WindowsServer.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.ApplicationInsights.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Microsoft.Diagnostics.Tracing.EventSource.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\Newtonsoft.Json.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Net.Http.Formatting.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Helpers.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Http.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Http.WebHost.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Mvc.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Optimization.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.Razor.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.WebPages.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.WebPages.Deployment.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\System.Web.WebPages.Razor.xml
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Net.Http.Formatting.resources.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Web.Helpers.resources.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Web.Http.resources.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Web.Http.WebHost.resources.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Web.Mvc.resources.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Web.Optimization.resources.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Web.Razor.resources.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Web.WebPages.resources.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Web.WebPages.Deployment.resources.dll
+D:\Projects CV\PIDE\PIDE FINAL\PIDE FINAL\PIDEREST\pide_api\bin\es\System.Web.WebPages.Razor.resources.dll

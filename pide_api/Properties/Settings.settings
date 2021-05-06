@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="pide_api.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="pide_api_pe_gob_pide_ws2_WSDataVerificationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws2.pide.gob.pe/reniec/WSDataVerificationBinding</Value>
+    </Setting>
+    <Setting Name="pide_api_pe_gob_pide_ws21_WSAuthenticationService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws2.pide.gob.pe/reniec2/WSAuthentication</Value>
+    </Setting>
+    <Setting Name="pide_api_pe_gob_pide_ws_ConsultaRucSoapBindingImplService_vs0" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://ws.pide.gob.pe/ConsultaRuc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

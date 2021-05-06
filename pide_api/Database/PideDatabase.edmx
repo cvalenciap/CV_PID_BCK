@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="10.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TBLPIDE_CONSULTA">
+          <Key>
+            <PropertyRef Name="CCONS_CONSULTA_ID" />
+          </Key>
+          <Property Name="CCONS_CONSULTA_ID" Type="number" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="SCONS_NOMBRE" Type="varchar2" MaxLength="30" Nullable="false" />
+          <Property Name="SCONS_DETALLE" Type="varchar2" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="TBLPIDE_CONSULTA_LOG">
+          <Key>
+            <PropertyRef Name="CCONSLOG_CONSULTA_LOG_ID" />
+          </Key>
+          <Property Name="CCONSLOG_CONSULTA_LOG_ID" Type="number" Precision="6" Scale="0" Nullable="false" />
+          <Property Name="SCONSLOG_USUARIO" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="DCONSLOG_FECHA_HORA" Type="date" Nullable="false" />
+          <Property Name="SCONSLOG_PARAMETROS_REQUEST" Type="varchar2" MaxLength="2000" />
+          <Property Name="CCCONSLOG_ERROR" Type="char" MaxLength="1" />
+          <Property Name="SCONSLOG_COMENTARIO_ERROR" Type="varchar2" MaxLength="2000" />
+          <Property Name="CCONS_CONSULTA_ID" Type="number" Precision="3" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBLPIDE_TOKEN">
+          <Key>
+            <PropertyRef Name="CTOK_TOKEN_ID" />
+          </Key>
+          <Property Name="CTOK_TOKEN_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="STOK_USUARIO_ID" Type="varchar2" MaxLength="100" Nullable="false" />
+          <Property Name="STOK_AUTH_TOKEN" Type="varchar2" MaxLength="200" Nullable="false" />
+          <Property Name="DTOK_FECHA_EXPIRACION" Type="date" />
+          <Property Name="DTOK_FECHA_CREACION" Type="date" />
+        </EntityType>
+        <Association Name="TBLPIDE_CONSULTA_FK">
+          <End Role="TBLPIDE_CONSULTA" Type="Self.TBLPIDE_CONSULTA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TBLPIDE_CONSULTA_LOG" Type="Self.TBLPIDE_CONSULTA_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLPIDE_CONSULTA">
+              <PropertyRef Name="CCONS_CONSULTA_ID" />
+            </Principal>
+            <Dependent Role="TBLPIDE_CONSULTA_LOG">
+              <PropertyRef Name="CCONS_CONSULTA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="TBLPIDE_CONSULTA" EntityType="Self.TBLPIDE_CONSULTA" Schema="FMV_PIDE" store:Type="Tables" />
+          <EntitySet Name="TBLPIDE_CONSULTA_LOG" EntityType="Self.TBLPIDE_CONSULTA_LOG" Schema="FMV_PIDE" store:Type="Tables" />
+          <EntitySet Name="TBLPIDE_TOKEN" EntityType="Self.TBLPIDE_TOKEN" Schema="FMV_PIDE" store:Type="Tables" />
+          <AssociationSet Name="TBLPIDE_CONSULTA_FK" Association="Self.TBLPIDE_CONSULTA_FK">
+            <End Role="TBLPIDE_CONSULTA" EntitySet="TBLPIDE_CONSULTA" />
+            <End Role="TBLPIDE_CONSULTA_LOG" EntitySet="TBLPIDE_CONSULTA_LOG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBLPIDE_CONSULTA">
+          <Key>
+            <PropertyRef Name="CCONS_CONSULTA_ID" />
+          </Key>
+          <Property Name="CCONS_CONSULTA_ID" Type="Byte" Nullable="false" />
+          <Property Name="SCONS_NOMBRE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SCONS_DETALLE" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBLPIDE_CONSULTA_LOG" Relationship="Self.TBLPIDE_CONSULTA_FK" FromRole="TBLPIDE_CONSULTA" ToRole="TBLPIDE_CONSULTA_LOG" />
+        </EntityType>
+        <EntityType Name="TBLPIDE_CONSULTA_LOG">
+          <Key>
+            <PropertyRef Name="CCONSLOG_CONSULTA_LOG_ID" />
+          </Key>
+          <Property Name="CCONSLOG_CONSULTA_LOG_ID" Type="Int32" Nullable="false" />
+          <Property Name="SCONSLOG_USUARIO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DCONSLOG_FECHA_HORA" Type="DateTime" Nullable="false" />
+          <Property Name="SCONSLOG_PARAMETROS_REQUEST" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="CCCONSLOG_ERROR" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SCONSLOG_COMENTARIO_ERROR" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="CCONS_CONSULTA_ID" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="TBLPIDE_CONSULTA" Relationship="Self.TBLPIDE_CONSULTA_FK" FromRole="TBLPIDE_CONSULTA_LOG" ToRole="TBLPIDE_CONSULTA" />
+        </EntityType>
+        <EntityType Name="TBLPIDE_TOKEN">
+          <Key>
+            <PropertyRef Name="CTOK_TOKEN_ID" />
+          </Key>
+          <Property Name="CTOK_TOKEN_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="STOK_USUARIO_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="STOK_AUTH_TOKEN" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DTOK_FECHA_EXPIRACION" Type="DateTime" />
+          <Property Name="DTOK_FECHA_CREACION" Type="DateTime" />
+        </EntityType>
+        <Association Name="TBLPIDE_CONSULTA_FK">
+          <End Role="TBLPIDE_CONSULTA" Type="Self.TBLPIDE_CONSULTA" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TBLPIDE_CONSULTA_LOG" Type="Self.TBLPIDE_CONSULTA_LOG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLPIDE_CONSULTA">
+              <PropertyRef Name="CCONS_CONSULTA_ID" />
+            </Principal>
+            <Dependent Role="TBLPIDE_CONSULTA_LOG">
+              <PropertyRef Name="CCONS_CONSULTA_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PideDatabase" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBLPIDE_CONSULTA" EntityType="Self.TBLPIDE_CONSULTA" />
+          <EntitySet Name="TBLPIDE_CONSULTA_LOG" EntityType="Self.TBLPIDE_CONSULTA_LOG" />
+          <EntitySet Name="TBLPIDE_TOKEN" EntityType="Self.TBLPIDE_TOKEN" />
+          <AssociationSet Name="TBLPIDE_CONSULTA_FK" Association="Self.TBLPIDE_CONSULTA_FK">
+            <End Role="TBLPIDE_CONSULTA" EntitySet="TBLPIDE_CONSULTA" />
+            <End Role="TBLPIDE_CONSULTA_LOG" EntitySet="TBLPIDE_CONSULTA_LOG" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="PideDatabase">
+          <EntitySetMapping Name="TBLPIDE_CONSULTA">
+            <EntityTypeMapping TypeName="Model.TBLPIDE_CONSULTA">
+              <MappingFragment StoreEntitySet="TBLPIDE_CONSULTA">
+                <ScalarProperty Name="CCONS_CONSULTA_ID" ColumnName="CCONS_CONSULTA_ID" />
+                <ScalarProperty Name="SCONS_NOMBRE" ColumnName="SCONS_NOMBRE" />
+                <ScalarProperty Name="SCONS_DETALLE" ColumnName="SCONS_DETALLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLPIDE_CONSULTA_LOG">
+            <EntityTypeMapping TypeName="Model.TBLPIDE_CONSULTA_LOG">
+              <MappingFragment StoreEntitySet="TBLPIDE_CONSULTA_LOG">
+                <ScalarProperty Name="CCONSLOG_CONSULTA_LOG_ID" ColumnName="CCONSLOG_CONSULTA_LOG_ID" />
+                <ScalarProperty Name="SCONSLOG_USUARIO" ColumnName="SCONSLOG_USUARIO" />
+                <ScalarProperty Name="DCONSLOG_FECHA_HORA" ColumnName="DCONSLOG_FECHA_HORA" />
+                <ScalarProperty Name="SCONSLOG_PARAMETROS_REQUEST" ColumnName="SCONSLOG_PARAMETROS_REQUEST" />
+                <ScalarProperty Name="CCCONSLOG_ERROR" ColumnName="CCCONSLOG_ERROR" />
+                <ScalarProperty Name="SCONSLOG_COMENTARIO_ERROR" ColumnName="SCONSLOG_COMENTARIO_ERROR" />
+                <ScalarProperty Name="CCONS_CONSULTA_ID" ColumnName="CCONS_CONSULTA_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLPIDE_TOKEN">
+            <EntityTypeMapping TypeName="Model.TBLPIDE_TOKEN">
+              <MappingFragment StoreEntitySet="TBLPIDE_TOKEN">
+                <ScalarProperty Name="CTOK_TOKEN_ID" ColumnName="CTOK_TOKEN_ID" />
+                <ScalarProperty Name="STOK_USUARIO_ID" ColumnName="STOK_USUARIO_ID" />
+                <ScalarProperty Name="STOK_AUTH_TOKEN" ColumnName="STOK_AUTH_TOKEN" />
+                <ScalarProperty Name="DTOK_FECHA_EXPIRACION" ColumnName="DTOK_FECHA_EXPIRACION" />
+                <ScalarProperty Name="DTOK_FECHA_CREACION" ColumnName="DTOK_FECHA_CREACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
